@@ -1,0 +1,90 @@
+.CompactCard {
+    display: flex;
+    flex: 1;
+    height: 7rem !important;
+    border-radius: 0.7rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--pink);
+  }
+  .CompactCard:hover {
+    box-shadow: none !important;
+  }
+  
+  /* radial bar */
+  .radialBar {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+
+  }
+  
+  .radialBar > span {
+    font-size: 17px;
+    font-weight: bold;
+
+  }
+
+  .radialBar > img {
+    width: 3rem;
+
+  }
+  
+  /* sideDetail*/
+  .detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+  }
+  
+  .detail > span:nth-child(2) {
+    font-size: 22px;
+    font-weight: bold;
+
+  }
+
+  .detail-pengeluaran{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    align-items: flex-end;
+
+  }
+
+  .detail-pengeluaran > span:nth-child(1){
+    font-size: 9px;
+    font-weight: bold;    
+
+  }
+
+  .detail-pengeluaran > span:nth-child(2){
+    font-size: 10px;
+    font-weight: bold;    
+
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .ExpandedCard {
+      top: 2rem;
+      height: 45vh;
+      left: 6rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .ExpandedCard {
+      top: 8rem;
+      height: 50%;
+      left: 25px;
+      width: 80%;
+    }
+  }
+  

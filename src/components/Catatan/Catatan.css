@@ -1,0 +1,75 @@
+.form{
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+}
+
+.form-group{
+    background-color: var(--pink);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: -20px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input{
+    border: none;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    background-color: var(--pink);
+    margin-top: 10px;
+}
+
+.input-group select{
+    border: none;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    background-color: var(--pink);
+    margin-top: 10px;
+
+}
+
+.input-group button{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height: 20px;
+    background-color: var(--pink);
+    margin-top: 10px;
+    height: 30px;
+}
+
+.input-group button:hover{
+    cursor: pointer
+}
+
+
+@media screen and (max-width: 1200px) {
+    .form-group{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-group{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-group{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-group>button{
+        margin-top:1rem;
+        width: 200px;
+        height: 20px;
+    }
+}

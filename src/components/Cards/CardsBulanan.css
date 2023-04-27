@@ -1,0 +1,27 @@
+.CardsBulanan {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.parentContainer{
+    width: 100%;
+    box-shadow: var(--smboxShadow)
+}
+  
+@media screen and (max-width: 1200px) {
+    .CardsBulanan{
+      flex-direction: column;
+      width: 170%;
+    }
+    .parentContainer{
+      height: 9rem;
+    }
+}
+  
+@media screen and (max-width: 768px)
+{
+    .CardsBulanan{
+      width: 90%;
+    }
+}
