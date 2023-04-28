@@ -12,8 +12,8 @@ const Updates = ({data_catatan}) => {
               <div  style={{marginBottom: '0.5rem'}}>
                 <span>{catatan.title}</span>
                 <span> {catatan.body}</span>
-              </div>
                 <span>{catatan.created_at}</span>
+              </div>
             </div>
           </div>
         );

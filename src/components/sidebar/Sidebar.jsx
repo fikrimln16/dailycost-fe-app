@@ -6,9 +6,10 @@ import {UilSignout} from "@iconscout/react-unicons"
 import { Navigate } from "react-router-dom";
 
 
-const Sidebar = () => {
+const Sidebar = ({selectedSidebar}) => {
     const dashboardData = require('../../Data/DashboardData')
-    const [selected, setSelected ] = useState(0)
+    const [selectSidebar, setSelectedSidebar ] = useState(selectedSidebar)
+    const [selected, setSelected] = useState("")
     const [logOut, setLogOut] = useState(false)
 
     const keluar = () => {
@@ -19,6 +20,14 @@ const Sidebar = () => {
 
     if ( logOut ){
         return <Navigate to="/"></Navigate>
+    }
+
+    if(selected === 0){
+        return <Navigate to='/dashboard'></Navigate>
+    }
+
+    if(selected === 1){
+        return <Navigate to='/pengeluaran'></Navigate>
     }
 
     return (
@@ -32,7 +41,7 @@ const Sidebar = () => {
             <div className="menu">
                 {SidebarData.map((item, index) => {
                     return (
-                        <div className={selected===index?'menu-items active':'menu-items'}
+                        <div className={selectSidebar===index?'menu-items active':'menu-items'}
                         key={index}
                         onClick={()=>{
                             setSelected(index)

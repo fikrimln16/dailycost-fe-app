@@ -16,3 +16,14 @@
     padding: 0;
     font-family: 'Inter', sans-serif;
 }
+
+*::-webkit-scrollbar{
+    width: 1.2rem;
+}
+*::-webkit-scrollbar-track{
+    background-color: var(--activeItem);
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--pink);
+}

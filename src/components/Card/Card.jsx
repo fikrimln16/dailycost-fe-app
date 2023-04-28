@@ -12,7 +12,7 @@ const Card = ({saldo, pembelian, pembayaran}) => {
   let year = tanggal.getFullYear();
   let month = String(tanggal.getMonth() + 1).padStart(2, '0');
   let day = String(tanggal.getDate()).padStart(2, '0');
-  let formattedDate = year + '-' + month + '-' + day;
+  let formattedDate = day + '-' + month + '-' + year;
 
   const makeStyle=(saldo)=>{
     if(saldo < 100000)

@@ -2,6 +2,7 @@ import {
     UilEstate,
     UilCreditCard,
     UilNotes, 
+    UilMoneyInsert
 } from "@iconscout/react-unicons"
 
 export const SidebarData = [
@@ -17,5 +18,9 @@ export const SidebarData = [
         icon: UilNotes,
         heading: "Catatan"
     },
+    {
+        icon: UilMoneyInsert,
+        heading: "Top Up"
+    }
 ]
 

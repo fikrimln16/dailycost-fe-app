@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     font-size: 13px;
+    overflow-x: hidden;
 }
 
 .update{
@@ -22,4 +23,9 @@
 
 .noti>div>span:nth-of-type(1){
     font-weight: bold;
+}
+
+.noti>div{
+    display: flex;
+    flex-direction: column
 }

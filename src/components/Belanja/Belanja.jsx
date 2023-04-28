@@ -62,7 +62,7 @@ const Belanja = () => {
             })
               .then((response) => {
                 // console.log(response.data.user_id)s
-                alert("Berhasil beli");
+                alert("Berhasil beli harap refresh kembali!");
                 // setSucced(true);
               })
               .catch((err) => {

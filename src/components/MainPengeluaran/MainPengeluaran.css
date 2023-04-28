@@ -1,0 +1,66 @@
+.MainPengeluaran{
+   padding-top: 1rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.title{
+   display:flex;
+   gap: 1rem;
+   margin: 1rem 0;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.title-pengeluaran{
+   display:flex;
+   gap: 1rem;
+   margin: 1rem 0;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.title>input{
+   border: none;
+   background: var(--pink);
+   border-radius: 10px;
+   height: 40px;
+   padding: 0 10px;
+}
+
+
+.refresh-btn:hover{
+   cursor:pointer;
+}
+
+.edit-saldo{
+   border: 2px solid black;
+   height: 50px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 1rem;
+}
+
+.edit-saldo>button{
+   height: 100%;
+   width: 305px;
+   border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+   .MainPengeluaran{
+       justify-content:flex-start;
+   }
+
+   .MainPengeluaran>Table{
+      width: 170%;
+   }
+}
+
+@media screen and (max-width: 768px)
+{
+   .MainDash{
+       align-items: center;
+   }
+}

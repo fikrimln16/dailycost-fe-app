@@ -5,12 +5,7 @@ import Gopay from "../../imgs/gopay.png"
 import {UilUsdSquare} from "@iconscout/react-unicons"
 // parent Card
 
-const CardBulanan = ({saldo, pembelian, pembayaran}) => {
-
-  const [tanggal, setTanggal] = useState(new Date())
-
-  let year = tanggal.getFullYear();
-  let month = String(tanggal.getMonth() + 1).padStart(2, '0');
+const CardBulanan = ({saldo, pembelian, pembayaran, date}) => {
 
   return (
     <div className="CompactCard">
@@ -20,7 +15,7 @@ const CardBulanan = ({saldo, pembelian, pembayaran}) => {
       </div>
       <div className="detail">
         <div className="tanggal">
-          <span>{month}/{year}</span>
+          <span>{date}</span>
           <UilUsdSquare></UilUsdSquare>
         </div>
         <span>RP.{saldo}</span>

@@ -31,7 +31,7 @@ const RightSide = ({catatan}) => {
     //     alert("Berhasil refresh catatan!")
     //   };
 
-    const recentCatatan = catatan.slice(0, 3)
+    const recentCatatan = catatan.slice(0, 2)
 
 
     if(viewMore){
@@ -42,7 +42,6 @@ const RightSide = ({catatan}) => {
     <div className="RightSide">
         <div className="title">
             <h3>Catatan</h3>
-            <UilRefresh></UilRefresh>
             <span onClick={() => {
               setViewMore(true);
             }}>view more...</span>
