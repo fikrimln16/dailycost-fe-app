@@ -12,7 +12,7 @@
 @media screen and (max-width: 1200px) {
     .CardsBulanan{
       flex-direction: column;
-      width: 170%;
+      width: 100%;
     }
     .parentContainer{
       height: 9rem;

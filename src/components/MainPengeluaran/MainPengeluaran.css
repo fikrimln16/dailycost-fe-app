@@ -6,7 +6,7 @@
 
 .title{
    display:flex;
-   gap: 1rem;
+   gap: 12rem;
    margin: 1rem 0;
    align-items: center;
    justify-content: space-between;
@@ -21,6 +21,33 @@
 }
 
 .title>input{
+   border: none;
+   background: var(--pink);
+   border-radius: 10px;
+   height: 40px;
+   padding: 0 10px;
+}
+
+.title>span{
+   /* border: 2px solid black; */
+   border-radius: 10px;
+   background-color: var(--pink);
+   font-size: 20px;
+   font-weight:bold;
+   padding: 10px;
+   color: #fff;
+}
+
+.title>span:hover{
+   color: #fff;
+}
+
+.input-tanggal{
+   display: flex;
+   gap: 1rem;
+}
+
+.input-tanggal>select{
    border: none;
    background: var(--pink);
    border-radius: 10px;
@@ -48,6 +75,7 @@
    border-radius: 0.5rem;
 }
 
+
 @media screen and (max-width: 1200px) {
    .MainPengeluaran{
        justify-content:flex-start;
@@ -55,6 +83,15 @@
 
    .MainPengeluaran>Table{
       width: 170%;
+   }
+
+   .MainPengeluaran>CardsBulanan{
+      width: 100%;
+   }
+
+   .table-bulanan{
+      width: 170%;
+      border:2px solid black;
    }
 }
 
