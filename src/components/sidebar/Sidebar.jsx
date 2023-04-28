@@ -30,6 +30,10 @@ const Sidebar = ({selectedSidebar}) => {
         return <Navigate to='/pengeluaran'></Navigate>
     }
 
+    if(selected === 3){
+        return <Navigate to='/topup'></Navigate>
+    }
+
     return (
         <div className="Sidebar">
             {/* Nav Logo  */}
