@@ -1,12 +1,8 @@
-import Cards from "../Cards/Cards";
 import "./MainPengeluaran.css";
 import Table from "../Table/Table";
 import React, { useEffect, useState } from "react";
-import { UilRefresh } from "@iconscout/react-unicons";
 import CardsBulanan from "../Cards/CardsBulanan";
-import { Navigate } from "react-router-dom";
 import axios from "axios";
-import DataTable from "../Table/DataTable";
 
 const MainPengeluaran = ({ pengeluaran }) => {
   //  const [viewMore, setViewMore] = useState(false)
@@ -59,50 +55,48 @@ const MainPengeluaran = ({ pengeluaran }) => {
     setSelectedYear(e.target.value);
   };
 
-  const getPengeluaran = async () => {
-    try {
-      let res = await axios.get(
-        `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
-          "user_id"
-        )}/list/${sort}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-      setPengeluaran(res.data.results);
-      setPembelian(res.data.pengeluaran);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const getPengeluaranBulanan = async () => {
-   try {
-     let res = await axios.get(
-       `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
-         "user_id"
-       )}/list/${selectedMonth}/${selectedYear}`,
-       {
-         headers: {
-           Authorization: `Bearer ${localStorage.getItem("token")}`,
-         },
-       }
-     );
-     setPengeluaranBulanan(res.data.results);
-     setPembelianBulanan(res.data.pengeluaran);
-   } catch (error) {
-     console.log(error.message);
-   }
- };
-
   useEffect(() => {
+    const getPengeluaran = async () => {
+      try {
+        let res = await axios.get(
+          `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
+            "user_id"
+          )}/list/${sort}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        setPengeluaran(res.data.results);
+        setPembelian(res.data.pengeluaran);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    const getPengeluaranBulanan = async () => {
+      try {
+        let res = await axios.get(
+          `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
+            "user_id"
+          )}/list/${selectedMonth}/${selectedYear}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        setPengeluaranBulanan(res.data.results);
+        setPembelianBulanan(res.data.pengeluaran);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
     getPengeluaran();
     getPengeluaranBulanan();
-    console.log("p", pengeluaranSortBulanan)
-    console.log(data_pembelianBulanan)
-  }, [sort, selectedYear]);
+  }, [sort, selectedYear, selectedMonth]);
 
   return (
     <div className="MainPengeluaran">
@@ -128,7 +122,9 @@ const MainPengeluaran = ({ pengeluaran }) => {
       ></CardsBulanan>
       <div className="title">
         <div className="title-pengeluaran">
-          <h1>Pengeluaran Bulanan {selectedMonth} - {selectedYear}</h1>
+          <h1>
+            Pengeluaran Bulanan {selectedMonth} - {selectedYear}
+          </h1>
         </div>
         <div className="input-tanggal">
           <select id="month" value={selectedMonth} onChange={handleMonthChange}>
@@ -155,7 +151,9 @@ const MainPengeluaran = ({ pengeluaran }) => {
       </div>
       <Table data_pengeluaran={pengeluaranSortBulanan}></Table>
       <div className="title">
-        <h1>Laporan Pengeluaran Bulanan {selectedMonth} - {selectedYear}</h1>
+        <h1>
+          Laporan Pengeluaran Bulanan {selectedMonth} - {selectedYear}
+        </h1>
         <span>Total : Rp.{data_pembelianBulanan.total_pembelian}</span>
       </div>
       <CardsBulanan

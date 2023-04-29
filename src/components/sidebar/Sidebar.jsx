@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import Logo from "../../imgs/logo.png"
 import { SidebarData } from "../../Data/SidebarData"
 import {UilSignout} from "@iconscout/react-unicons" 
 import { Navigate } from "react-router-dom";
 
 
 const Sidebar = ({selectedSidebar}) => {
-    const dashboardData = require('../../Data/DashboardData')
-    const [selectSidebar, setSelectedSidebar ] = useState(selectedSidebar)
     const [selected, setSelected] = useState("")
     const [logOut, setLogOut] = useState(false)
 
     const keluar = () => {
         setLogOut(true)
         localStorage.clear()
-        dashboardData.splice(0, dashboardData.length);
     }
 
     if ( logOut ){
@@ -38,14 +34,13 @@ const Sidebar = ({selectedSidebar}) => {
         <div className="Sidebar">
             {/* Nav Logo  */}
             <div className="logo">
-                <img src={Logo} alt="logo" />
-                <h4>Daily<span>Cost</span></h4>
+                <h2>Daily<span>Cost</span></h2>
             </div>
             {/* Nav Items */}
             <div className="menu">
                 {SidebarData.map((item, index) => {
                     return (
-                        <div className={selectSidebar===index?'menu-items active':'menu-items'}
+                        <div className={selectedSidebar===index?'menu-items active':'menu-items'}
                         key={index}
                         onClick={()=>{
                             setSelected(index)

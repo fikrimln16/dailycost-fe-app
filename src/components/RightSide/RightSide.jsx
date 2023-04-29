@@ -1,8 +1,6 @@
 import Updates from "../Updates/Updates";
 import "./RightSide.css";
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import {UilRefresh} from "@iconscout/react-unicons"
+import React, { useState } from 'react'
 import Belanja from "../Belanja/Belanja";
 import { Navigate } from "react-router-dom";
 import Catatan from "../Catatan/Catatan";
@@ -42,9 +40,9 @@ const RightSide = ({catatan}) => {
     <div className="RightSide">
         <div className="title">
             <h3>Catatan</h3>
-            <span onClick={() => {
+            <div className="button" onClick={() => {
               setViewMore(true);
-            }}>view more...</span>
+            }}>view more</div>
         </div>
         <Updates data_catatan={recentCatatan}/>
         <div className="title">

@@ -30,6 +30,11 @@
     border-radius: 0.5rem;
 }
 
+.button:hover{
+    color: var(--gray);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
     .MainDash{
         justify-content:flex-start;
