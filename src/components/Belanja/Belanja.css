@@ -56,6 +56,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    
+    .form{
+        width: 70%;
+    }
+    
     .form-group{
         width: 100%;
         justify-content: center;

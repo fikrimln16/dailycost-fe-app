@@ -2,9 +2,9 @@ import React from "react";
 import "./CardsBulanan.css"
 import CardBulanan from "../Card/CardBulanan";
 
-const CardsBulanan = ({data_saldo, data_pembelian}) => {
+const CardsBulanan = ({data_saldo, data_pembelian, sec}) => {
     return (
-        <div className="CardsBulanan">
+        <div className="CardsBulanan" id={sec}>
             <div className="parentContainer">
                 <CardBulanan saldo={data_saldo.pengeluaran_gopay} pembelian={data_pembelian.pembelian_gopay} pembayaran="GOPAY" date={data_pembelian.date}></CardBulanan>
             </div>

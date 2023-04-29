@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 
-.title{
+.title-dash{
     display:flex;
     gap: 1rem;
     margin: 1rem 0;
@@ -45,5 +45,9 @@
 {
     .MainDash{
         align-items: center;
+    }
+
+    .title-dash{
+        font-size : 10px;
     }
 }

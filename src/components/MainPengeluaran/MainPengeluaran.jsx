@@ -102,7 +102,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
     <div className="MainPengeluaran">
       <div className="title">
         <div className="title-pengeluaran">
-          <h1>Pengeluaran Harian</h1>
+          <h1>List Pengeluaran Harian</h1>
         </div>
         <input
           type="date"
@@ -112,7 +112,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
         />
       </div>
       <Table data_pengeluaran={pengeluaranSort}></Table>
-      <div className="title">
+      <div className="title" id="title-kedua">
         <h1>Laporan Pengeluaran {sort}</h1>
         <span>Total: Rp. {data_pembelian.total_pembelian}</span>
       </div>
@@ -120,10 +120,10 @@ const MainPengeluaran = ({ pengeluaran }) => {
         data_saldo={data_pembelian}
         data_pembelian={data_pembelian}
       ></CardsBulanan>
-      <div className="title">
+      <div className="title" id="title-ketiga">
         <div className="title-pengeluaran">
           <h1>
-            Pengeluaran Bulanan {selectedMonth} - {selectedYear}
+            List Pengeluaran Bulanan 
           </h1>
         </div>
         <div className="input-tanggal">
@@ -149,16 +149,17 @@ const MainPengeluaran = ({ pengeluaran }) => {
             setSort(e.target.value)
          }}/> */}
       </div>
-      <Table data_pengeluaran={pengeluaranSortBulanan}></Table>
-      <div className="title">
+      <Table data_pengeluaran={pengeluaranSortBulanan} sec="table-pengeluaran-bulanan"></Table>
+      <div className="title" id="title-keempat">
         <h1>
-          Laporan Pengeluaran Bulanan {selectedMonth} - {selectedYear}
+          Laporan Pengeluaran Bulanan
         </h1>
         <span>Total : Rp.{data_pembelianBulanan.total_pembelian}</span>
       </div>
       <CardsBulanan
         data_saldo={data_pembelianBulanan}
         data_pembelian={data_pembelianBulanan}
+        sec="cards-pengeluaran-bulanan"
       ></CardsBulanan>
     </div>
   );

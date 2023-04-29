@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import "./Login.css";
+import "../Login/Login.css";
 
 const Login = () => {
   const [gopay, setUangGopay] = useState("");
   const [rekening, setUangRekening] = useState("");
   const [cash, setUangCash] = useState("");
   const [error, setError] = useState("");
-  const [kembali, setKembali] = useState(false);
   const [berhasilIsi, setBerhasilIsi] = useState(false);
 
   const handleGopay = (event) => {
@@ -42,7 +41,7 @@ const Login = () => {
     } else {
       console.log(user_depo);
       axios
-        .post("http://localhost:5000/user/topup", user_depo, {
+        .post("http://localhost:5000/user/newdepo", user_depo, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -60,11 +59,6 @@ const Login = () => {
   if (berhasilIsi) {
     return <Navigate to="/dashboard" />;
   }
-
-  if (kembali) {
-   return <Navigate to="/dashboard" />;
- }
-
 
   return (
     <div className="container-form">
@@ -103,11 +97,6 @@ const Login = () => {
           </div>
           <div className="action">
             <button onClick={postDepo}>Input Uang</button>
-          </div>
-          <div className="action">
-            <button onClick={() => {
-               setKembali(true);
-            }}>Kembali</button>
           </div>
         </form>
       </div>

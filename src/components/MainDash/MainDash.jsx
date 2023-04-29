@@ -22,11 +22,11 @@ const MainDash = ({ saldo, pembelian, pengeluaran, pembelian_bulanan }) => {
 
   return (
     <div className="MainDash">
-      <div className="title">
+      <div className="title-dash">
         <h1>Dashboard</h1>
       </div>
       <Cards data_saldo={saldo} data_pembelian={pembelian}></Cards>
-      <div className="title">
+      <div className="title-dash">
         <h1>Recent Buy</h1>
         <div className="button"
           onClick={() => {
@@ -37,7 +37,7 @@ const MainDash = ({ saldo, pembelian, pengeluaran, pembelian_bulanan }) => {
         </div>
       </div>
       <Table data_pengeluaran={recentBuy}></Table>
-      <div className="title">
+      <div className="title-dash">
         <h1>Monthly Reports {month}-{year}</h1>
         <div className="button"
           onClick={() => {

@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./Pengeluaran.css";
-import MainDash from "../components/MainDash/MainDash";
-import Sidebar from "../components/sidebar/Sidebar";
-import RightSide from "../components/RightSide/RightSide";
+import "./Dashboard.css";
+import MainDash from "../../components/MainDash/MainDash";
+import Sidebar from "../../components/sidebar/Sidebar";
+import RightSide from "../../components/RightSide/RightSide";
 import axios from "axios";
-import MainPengeluaran from "../components/MainPengeluaran/MainPengeluaran";
-import Belanja from "../components/Belanja/Belanja";
-import RightSidePengeluaran from "../components/RightSide/RightSidePengeluaran";
 
-function Pengeluaran() {
+function Dashboard() {
   const [dataSaldo, setDataSaldo] = useState([]);
   const [dataPengeluaran, setDataPengeluaran] = useState([]);
   const [dataPembelian, setDataPembelian] = useState([]);
@@ -93,12 +90,17 @@ function Pengeluaran() {
   return (
     <div className="Dashboard">
       <div className="DashboardGlass">
-        <Sidebar selectedSidebar={1}></Sidebar>
-        <MainPengeluaran pengeluaran={dataPengeluaran}></MainPengeluaran>
-        <RightSidePengeluaran></RightSidePengeluaran>
+        <Sidebar selectedSidebar={0}></Sidebar>
+        <MainDash
+          saldo={dataSaldo}
+          pembelian={dataPembelian}
+          pengeluaran={dataPengeluaran}
+          pembelian_bulanan={dataPembelianBulanan}
+          ></MainDash>
+        <RightSide catatan={dataCatatan}></RightSide>
       </div>
     </div>
   );
 }
 
-export default Pengeluaran;
+export default Dashboard;

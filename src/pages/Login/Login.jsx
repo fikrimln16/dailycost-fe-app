@@ -2,13 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
-import Logo from "../imgs/logo.png";
-
-const dashboardData = require("../Data/DashboardData");
-const saldoData = require("../Data/SaldoData");
-const pembelianData = require("../Data/PembelianData");
-const pengeluaranData = require("../Data/PengeluaranData");
-const catatanData = require("../Data/CatatanData");
 
 const Login = () => {
     const [today, setToday] = useState(new Date());
@@ -97,6 +90,7 @@ const Login = () => {
                 <div className="input-field">{error && <p>{error}</p>}</div>
             </div>
             <div className="action">
+                <button onClick={handleSubmit}>Masuk</button>
                 <button
                 onClick={() => {
                     setRegister(true);
@@ -104,7 +98,6 @@ const Login = () => {
                 >
                 Daftar
                 </button>
-                <button onClick={handleSubmit}>Masuk</button>
             </div>
             </form>
         </div>

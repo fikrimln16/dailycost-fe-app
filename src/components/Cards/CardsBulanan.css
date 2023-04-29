@@ -17,11 +17,27 @@
     .parentContainer{
       height: 9rem;
     }
+
+    #cards-pengeluaran-harian{
+      width:170%;
+    }
+
+    #cards-pengeluaran-bulanan{
+      width:170%;
+    }
 }
   
 @media screen and (max-width: 768px)
 {
     .CardsBulanan{
       width: 90%;
+    }
+
+    #cards-pengeluaran-harian{
+      width:90%;
+    }
+
+    #cards-pengeluaran-bulanan{
+      width:90%;
     }
 }

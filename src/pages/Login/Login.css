@@ -102,14 +102,14 @@
   .login-form .action button:hover {
     background: var(--pink);
   }
-  .login-form .action button:nth-child(2) {
+  .login-form .action button:nth-child(1) {
     background: var(--activeItem);
     font-weight: 700;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 4px;
     
   }
-  .login-form .action button:nth-child(2):hover {
+  .login-form .action button:nth-child(1):hover {
     background: var(--pink);
     
   }

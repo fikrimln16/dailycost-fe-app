@@ -38,18 +38,18 @@ const RightSide = ({catatan}) => {
 
   return (
     <div className="RightSide">
-        <div className="title">
+        <div className="title-rightside">
             <h3>Catatan</h3>
             <div className="button" onClick={() => {
               setViewMore(true);
             }}>view more</div>
         </div>
         <Updates data_catatan={recentCatatan}/>
-        <div className="title">
+        <div className="title-rightside">
             <h3>Input Belanja</h3>
         </div>
         <Belanja></Belanja>
-        <div className="title">
+        <div className="title-rightside">
             <h3>Input Catatan</h3>
         </div>
         <Catatan></Catatan>

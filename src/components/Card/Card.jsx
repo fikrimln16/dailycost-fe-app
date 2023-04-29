@@ -29,7 +29,7 @@ const Card = ({saldo, pembelian, pembayaran}) => {
     }
     else{
       return{
-        color: '#85e62c',
+        color: '#91ff77',
       }
     }
   }

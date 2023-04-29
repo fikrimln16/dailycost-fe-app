@@ -1,6 +1,8 @@
 import React, { useState, useEffect }from "react";
 import axios from "axios";
 import "./Belanja.css";
+import { Navigate } from "react-router-dom";
+
 // parent Card
 
 const Belanja = () => {
@@ -67,10 +69,14 @@ const Belanja = () => {
               })
               .catch((err) => {
                 alert("token expired, silahkah login kembali!");
-                // setError(true);
+                setError(true);
             });
         }
       };
+
+      if(error){
+        return <Navigate to="/login"/>
+      }
 
     return (
         <div className="form">

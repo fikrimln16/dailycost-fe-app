@@ -27,9 +27,9 @@ const makeStyle = (pembayaran) => {
   }
 };
 
-export default function BasicTable({ data_pengeluaran }) {
+export default function BasicTable({ data_pengeluaran, sec }) {
   return (
-    <div className="Table">
+    <div className="Table" id={sec}>
       <TableContainer
         component={Paper}
         style={{ boxShadow: "0px 13px 20px 0px #80808029" }}

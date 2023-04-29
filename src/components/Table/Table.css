@@ -28,6 +28,10 @@
     .Table {
       width: 100%;
     }
+
+    #table-pengeluaran-bulanan{
+      width: 170%;
+    }
   }
   
   
@@ -37,6 +41,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 23rem;
+      width: 17rem;
     }
+
+    #table-pengeluaran-bulanan{
+      width: 17rem;
+    }
+
   }
