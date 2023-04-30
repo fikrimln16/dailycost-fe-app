@@ -4,7 +4,6 @@
     flex-direction: column;
 }
 
-// eslint-disable-next-line
 .title-dash{
     display: flex;
     justify-content: flex-start;
