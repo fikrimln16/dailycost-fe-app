@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "../Login/Login.css";
 
 
 const Login = () => {
-  const [today, setToday] = useState(new Date());
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [register, setRegister] = useState(false);
   const [berhasil, setBerhasil] = useState(false);
 
   const registerForm = {
@@ -35,14 +32,10 @@ const Login = () => {
   const handleRepasswordChange = (event) => {
     setRepassword(event.target.value);
   };
-  let year = today.getFullYear();
-  let month = String(today.getMonth() + 1).padStart(2, "0");
-  let day = String(today.getDate()).padStart(2, "0");
-  let formattedDate = year + "-" + month + "-" + day;
 
-  // useEffect(() => {
-  //     localStorage.clear();
-  // }, [handleSubmit])
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const registerSubmit = (event) => {
     event.preventDefault();
@@ -52,12 +45,15 @@ const Login = () => {
     } else {
       if (password !== repassword) {
         setError("Password tidak sama!");
+      } else if (!emailRegex.test(email)) {
+        setError("Email tidak valid!");
+      } else if (!passwordRegex.test(password)) {
+        setError("Password harus mengandung setidaknya 1 huruf kecil, 1 huruf besar, 1 angka, dan memiliki panjang minimal 8 karakter");
       } else {
         axios
           .post("http://localhost:5000/register", registerForm)
           .then((response) => {
             console.log(response.data.message);
-            // localStorage.setItem("user_id", JSON.parse(response.data.id));
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("user_id", response.data.data.id);
             alert("Berhasil membuat akun!");
@@ -68,9 +64,14 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {
+    setError("");
+  }, [username, email, repassword, password]);
+
   if (berhasil) {
     return <Navigate to="/depo" />;
   }
+
 
   return (
     <div className="container-form">

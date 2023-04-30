@@ -16,10 +16,18 @@
     gap: 0.5rem;
 }
 
-.update>img{
-    width: 3.2rem;
-    height: 3.2rem;
+
+.update>a>img{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
 }
+
+.update>a>img:hover{
+    transform: scale(1.2);
+    pointer: cursor;
+}
+
 
 .noti>div>span:nth-of-type(1){
     font-weight: bold;

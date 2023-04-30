@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Card.css";
 import "react-circular-progressbar/dist/styles.css";
 import Gopay from "../../imgs/gopay.png"
@@ -7,8 +7,7 @@ import {UilUsdSquare} from "@iconscout/react-unicons"
 
 const Card = ({saldo, pembelian, pembayaran}) => {
 
-  const [tanggal, setTanggal] = useState(new Date())
-
+  const tanggal = new Date();
   let year = tanggal.getFullYear();
   let month = String(tanggal.getMonth() + 1).padStart(2, '0');
   let day = String(tanggal.getDate()).padStart(2, '0');

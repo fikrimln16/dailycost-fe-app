@@ -1,0 +1,81 @@
+.card {
+   width: 100%;
+   background: white;
+   border-radius: 0.7rem;
+   padding: 1rem;
+   gap: 1rem;
+   display: flex;
+   flex-direction: column;
+   font-size: 13px;
+   overflow-x: hidden;
+   background-color: var(--activeItem)
+ }
+ 
+ .card img {
+   width: 20rem;
+   height: 20rem;;
+ }
+ 
+ .card-content {
+   padding: 1rem;
+ }
+
+ .card-content h3{
+   font-weight: bold;
+   font-size: 25px;
+ }
+
+ .card-content p{
+   margin-top: 10px;
+ }
+
+ .card-content a{
+   margin-top: 10px;
+ }
+ 
+ .card.landscape {
+   flex-direction: row;
+   width: 100%;
+ }
+ 
+ .card.landscape img {
+   max-width: 50%;
+   height: auto;
+   overflow: hidden;
+
+ }
+ 
+ .card.portrait {
+   border: 2px solid red;
+   width: 100%;
+   background: var(--activeItem);
+   border-radius: 0.7rem;
+   gap: 1rem;
+   display: flex;
+   flex-direction: column;
+   font-size: 13px;
+   overflow-x: hidden;
+ }
+
+ .card.portrait img{
+   width: 100%;
+   object-fit: cover;
+   border-radius: 16px;
+ }
+
+ 
+ @media (max-width: 768px) {
+   .card {
+     flex-direction: column;
+   }
+ 
+   .card img {
+     max-height: 50vh;
+   }
+ 
+   .card.landscape img {
+     max-width: 100%;
+     max-height: none;
+   }
+ }
+ 

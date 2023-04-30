@@ -4,7 +4,6 @@ import axios from "axios";
 import "./Login.css";
 
 const Login = () => {
-    const [today, setToday] = useState(new Date());
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -24,11 +23,6 @@ const Login = () => {
         setPassword(event.target.value);
     };
 
-    const registerHandler = (event) => {
-        event.preventDefault();
-        console.log("Register");
-        setRegister(true);
-    };
 
     useEffect(() => {
         setError("");
@@ -47,6 +41,7 @@ const Login = () => {
             .then((response) => {
             // console.log(response.data.user_id)s
             localStorage.setItem("user_id", JSON.parse(response.data.data.id));
+            localStorage.setItem("nama", response.data.data.nama.toUpperCase());
             localStorage.setItem("token", response.data.token);
             alert("Berhasil Login");
             setIsLoggedIn(true);

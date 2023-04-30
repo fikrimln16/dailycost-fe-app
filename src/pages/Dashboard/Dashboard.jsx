@@ -11,21 +11,13 @@ function Dashboard() {
   const [dataPembelian, setDataPembelian] = useState([]);
   const [dataCatatan, setDataCatatan] = useState([]);
   const [dataPembelianBulanan, setDataPembelianBulanan] = useState([]);
-  const [today, setToday] = useState(new Date());
+  const today = new Date();
 
   let year = today.getFullYear();
   let month = String(today.getMonth() + 1).padStart(2, "0");
   let day = String(today.getDate()).padStart(2, "0");
   let formattedDate = year + "-" + month + "-" + day;
 
-  const requestSaldo = axios.get(
-    `http://localhost:5000/user/saldo/${localStorage.getItem("user_id")}`,
-    {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    }
-  );
   const requestPengeluaran = axios.get(
     `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
       "user_id"
@@ -66,25 +58,38 @@ function Dashboard() {
   useEffect(() => {
     const getData = async () => {
       await Promise.all([
-        requestSaldo,
         requestPengeluaran,
         requestPembelian,
         requestCatatan,
         requestPembelianBulanan,
       ])
         .then((responses) => {
-          setDataSaldo(responses[0].data.results[0]);
-          setDataPembelian(responses[1].data.pengeluaran);
-          setDataPengeluaran(responses[2].data.results);
-          setDataCatatan(responses[3].data.data);
-          setDataPembelianBulanan(responses[4].data.pengeluaran);
+          setDataPembelian(responses[0].data.pengeluaran);
+          setDataPengeluaran(responses[1].data.results);
+          setDataCatatan(responses[2].data.data);
+          setDataPembelianBulanan(responses[3].data.pengeluaran);
         })
         .catch((error) => {
           console.log(error);
         });
     };
 
+    const getSaldo = async () => {
+      await axios.get(
+        `http://localhost:5000/user/saldo/${localStorage.getItem("user_id")}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      ).then((responses) => {
+        setDataSaldo(responses.data.results[0]);
+      });
+    }
+
+
     getData();
+    getSaldo();
   }, [RightSide]);
 
   return (

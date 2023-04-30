@@ -1,6 +1,8 @@
-import React, { useState, useEffect }from "react";
+import React, { useState }from "react";
 import axios from "axios";
 import "./Catatan.css";
+import { Navigate } from "react-router-dom";
+
 // parent Card
 
 const Catatan = () => {
@@ -39,11 +41,15 @@ const Catatan = () => {
             alert("Berhasil tambah catatan!");
         })
         .catch((err) => {
-            // alert("token expired, silahkah login kembali!");
-            // setError(true);
+            alert("token expired, silahkah login kembali!");
+            setError(true);
             console.log(err)
         });
     };
+
+    if(error){
+        return <Navigate to="/login"/>
+    }
 
     return (
         <div className="form">

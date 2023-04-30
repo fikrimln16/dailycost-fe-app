@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Pengeluaran.css";
+import "./Catatan.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import RightSide from "../../components/RightSide/RightSide";
 import MainPengeluaran from "../../components/MainPengeluaran/MainPengeluaran";
 import RightSidePengeluaran from "../../components/RightSide/RightSidePengeluaran";
+import CardCatatan from "../../components/Card/CardCatatan";
+import MainCatatan from "../../components/MainCatatan/MainCatatan";
 
-function Pengeluaran() {
-  const [dataPengeluaran, setDataPengeluaran] = useState([]);
+function Catatan() {
+  const [dataCatatan, setDataCatatan] = useState([]);
 
-  const requestPembelian = axios.get(
-    `http://localhost:5000/user/pengeluaran/${localStorage.getItem("user_id")}`,
+  const requestCatatan = axios.get(
+    `http://localhost:5000/user/catatan/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -18,15 +20,11 @@ function Pengeluaran() {
     }
   );
 
-
-
   useEffect(() => {
     const getData = async () => {
-      await Promise.all([
-        requestPembelian,
-      ])
+      await Promise.all([requestCatatan])
         .then((responses) => {
-          setDataPengeluaran(responses[0].data.results);
+          setDataCatatan(responses[0].data.data);
         })
         .catch((error) => {
           console.log(error);
@@ -39,12 +37,11 @@ function Pengeluaran() {
   return (
     <div className="Dashboard">
       <div className="DashboardGlass">
-        <Sidebar selectedSidebar={1}></Sidebar>
-        <MainPengeluaran pengeluaran={dataPengeluaran}></MainPengeluaran>
-        <RightSidePengeluaran></RightSidePengeluaran>
+        <Sidebar selectedSidebar={2}></Sidebar>
+        <MainCatatan data_catatan={dataCatatan}></MainCatatan>
       </div>
     </div>
   );
 }
 
-export default Pengeluaran;
+export default Catatan;

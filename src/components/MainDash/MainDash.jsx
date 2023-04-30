@@ -22,29 +22,29 @@ const MainDash = ({ saldo, pembelian, pengeluaran, pembelian_bulanan }) => {
 
   return (
     <div className="MainDash">
-      <div className="title-dash">
-        <h1>Dashboard</h1>
+      <div className="title-dash" id="dashboard">
+        <h1>Halo, Selamat Datang {localStorage.getItem("nama")}</h1>
       </div>
       <Cards data_saldo={saldo} data_pembelian={pembelian}></Cards>
-      <div className="title-dash">
-        <h1>Recent Buy</h1>
+      <div className="title-dash" id="harian">
+        <h1>Pembelian Terakhir</h1>
         <div className="button"
           onClick={() => {
             setViewMore(true);
           }}
         >
-          view more...
+          lebih lengkap...
         </div>
       </div>
       <Table data_pengeluaran={recentBuy}></Table>
-      <div className="title-dash">
-        <h1>Monthly Reports {month}-{year}</h1>
+      <div className="title-dash" id="bulanan">
+        <h1>Laporan Bulanan {month}-{year}</h1>
         <div className="button"
           onClick={() => {
             setViewMore(true);
           }}
         >
-          view more...
+          lebih lengkap...
         </div>
       </div>
       <CardsBulanan

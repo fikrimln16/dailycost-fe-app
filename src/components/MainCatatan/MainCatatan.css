@@ -1,0 +1,12 @@
+.MainCatatan{
+   padding-top: 1rem;
+   display: flex;
+   flex-direction: column;
+}
+
+.list-catatan{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   border: 2px solid black;
+}

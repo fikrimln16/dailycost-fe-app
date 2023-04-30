@@ -3,6 +3,7 @@ import Table from "../Table/Table";
 import React, { useEffect, useState } from "react";
 import CardsBulanan from "../Cards/CardsBulanan";
 import axios from "axios";
+import CardCatatan from "../Card/CardCatatan";
 
 const MainPengeluaran = ({ pengeluaran }) => {
   //  const [viewMore, setViewMore] = useState(false)
