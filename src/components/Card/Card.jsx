@@ -44,10 +44,10 @@ const Card = ({saldo, pembelian, pembayaran}) => {
           <span>{formattedDate}</span>
           <UilUsdSquare></UilUsdSquare>
         </div>
-        <span style={makeStyle(saldo)} >RP.{saldo}</span>
+        <span style={makeStyle(saldo)} >RP{saldo}</span>
         <div className="detail-pengeluaran">
             <span>Pengeluaran hari ini:</span>
-            <span>Rp.{pembelian}</span>
+            <span>Rp{pembelian}</span>
         </div>
       </div>
     </div>

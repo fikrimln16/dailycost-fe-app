@@ -18,7 +18,7 @@ const CardBulanan = ({saldo, pembelian, pembayaran, date}) => {
           <span>{date}</span>
           <UilUsdSquare></UilUsdSquare>
         </div>
-        <span>RP.{saldo}</span>
+        <span>RP{saldo}</span>
         <div className="detail-pengeluaran">
             <span>Total Pembelian:</span>
             <span>{pembelian} barang.</span>
