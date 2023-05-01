@@ -9,6 +9,7 @@ const MainCatatan = ({data_catatan}) =>{
       <div className="MainCatatan">
          <div className="title-dash">
             <h1>Catatan {localStorage.getItem("nama")}</h1>
+            <h1>Coming Soon! {localStorage.getItem("nama")}</h1>
          </div>
          <div className="list-catatan">
          </div>

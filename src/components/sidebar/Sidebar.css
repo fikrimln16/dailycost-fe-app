@@ -5,8 +5,13 @@
     padding-top: 4rem;
 }
 
+.bars{
+    display: none;
+}
+
 .logo{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-weight: bold;
@@ -14,14 +19,17 @@
     font-size: 1rem;
 }
 
-.logo>img{
-    width: 2rem;    
+.logo h4{
+    font-size: 25px;
 }
 
 .logo>h4>span{
     color: tomato;
 }
 
+.logo p{
+    font-size: 10px
+}
 .menu{
     display: flex;
     flex-direction: column;
