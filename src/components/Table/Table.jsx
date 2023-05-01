@@ -27,6 +27,12 @@ const makeStyle = (pembayaran) => {
   }
 };
 
+const numberWithCommas = (x) => {
+  const number = parseInt(x);
+  const formattedNumber = number.toLocaleString('id-ID');
+  return formattedNumber;
+}
+
 export default function BasicTable({ data_pengeluaran, sec }) {
   return (
     <div className="Table" id={sec}>
@@ -53,7 +59,7 @@ export default function BasicTable({ data_pengeluaran, sec }) {
                   {row.nama}
                 </TableCell>
                 <TableCell align="left">{row.tanggal}</TableCell>
-                <TableCell align="left">{row.jumlah}</TableCell>
+                <TableCell align="left">{numberWithCommas(row.jumlah)}</TableCell>
                 <TableCell align="center">
                   <span className="status" style={makeStyle(row.pembayaran)}>
                     {row.pembayaran}

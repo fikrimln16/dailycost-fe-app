@@ -9,9 +9,9 @@ const Card = ({saldo, pembelian, pembayaran}) => {
 
 
   const numberWithCommas = (x) => {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return parts.join(".");
+    const number = parseInt(x);
+    const formattedNumber = number.toLocaleString('id-ID');
+    return formattedNumber;
   }
 
   const tanggal = new Date();
@@ -54,7 +54,7 @@ const Card = ({saldo, pembelian, pembayaran}) => {
         <span style={makeStyle(saldo)} >Rp{numberWithCommas(saldo)}</span>
         <div className="detail-pengeluaran">
             <span>Pengeluaran hari ini:</span>
-            <span>Rp{numberWithCommas(pembelian)}</span>
+            <span>Rp{numberWithCommas(pembelian)} </span>
         </div>
       </div>
     </div>

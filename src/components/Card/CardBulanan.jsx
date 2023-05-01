@@ -8,9 +8,9 @@ import {UilUsdSquare} from "@iconscout/react-unicons"
 const CardBulanan = ({saldo, pembelian, pembayaran, date}) => {
 
   const numberWithCommas = (x) => {
-    var parts = x.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return parts.join(".");
+    const number = parseInt(x);
+    const formattedNumber = number.toLocaleString('id-ID');
+    return formattedNumber;
   }
 
   return (
