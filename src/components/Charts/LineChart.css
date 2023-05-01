@@ -1,0 +1,21 @@
+.bar{
+   display: flex;
+   flex-direction: column;
+   justify-content: center
+}
+
+.bar canvas{
+   border: 2px solid red;
+}
+
+@media screen and (max-width: 1200px) {
+   .bar{
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .bar{
+      width: 100%;
+   }
+}

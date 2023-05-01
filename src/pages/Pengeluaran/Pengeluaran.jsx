@@ -8,9 +8,19 @@ import RightSidePengeluaran from "../../components/RightSide/RightSidePengeluara
 
 function Pengeluaran() {
   const [dataPengeluaran, setDataPengeluaran] = useState([]);
+  const [dataChart, setDataChart] = useState([]);
 
   const requestPembelian = axios.get(
     `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem("user_id")}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+
+  const requestChartData = axios.get(
+    `https://daily-cost.my.id/user/pengeluaran/chart/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -24,9 +34,11 @@ function Pengeluaran() {
     const getData = async () => {
       await Promise.all([
         requestPembelian,
+        requestChartData
       ])
         .then((responses) => {
           setDataPengeluaran(responses[0].data.results);
+          setDataChart(responses[1].data.results);
         })
         .catch((error) => {
           console.log(error);
@@ -41,7 +53,7 @@ function Pengeluaran() {
       <div className="DashboardGlass">
         <Sidebar selectedSidebar={1}></Sidebar>
         <MainPengeluaran pengeluaran={dataPengeluaran}></MainPengeluaran>
-        <RightSidePengeluaran></RightSidePengeluaran>
+        <RightSidePengeluaran data={dataChart}></RightSidePengeluaran>
       </div>
     </div>
   );
