@@ -57,7 +57,7 @@ const Belanja = () => {
             console.log(selectedValue);
             console.log(formBelanja);
             axios
-              .post("http://localhost:5000/user/belanja", formBelanja, {
+              .post("https://daily-cost.my.id/user/belanja", formBelanja, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

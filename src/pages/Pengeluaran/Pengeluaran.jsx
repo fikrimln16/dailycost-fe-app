@@ -10,7 +10,7 @@ function Pengeluaran() {
   const [dataPengeluaran, setDataPengeluaran] = useState([]);
 
   const requestPembelian = axios.get(
-    `http://localhost:5000/user/pengeluaran/${localStorage.getItem("user_id")}`,
+    `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

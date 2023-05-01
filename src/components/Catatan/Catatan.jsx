@@ -30,7 +30,7 @@ const Catatan = () => {
     const tambahHandler = (event) => {
         event.preventDefault();
         axios
-        .post("http://localhost:5000/user/catatan", formCatatan, {
+        .post("https://daily-cost.my.id/user/catatan", formCatatan, {
             headers: {
                 'Content-Type': 'multipart/form-data',
                 'Authorization': `Bearer ${token}`

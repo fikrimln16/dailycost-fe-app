@@ -60,7 +60,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
     const getPengeluaran = async () => {
       try {
         let res = await axios.get(
-          `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
+          `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem(
             "user_id"
           )}/list/${sort}`,
           {
@@ -79,7 +79,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
     const getPengeluaranBulanan = async () => {
       try {
         let res = await axios.get(
-          `http://localhost:5000/user/pengeluaran/${localStorage.getItem(
+          `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem(
             "user_id"
           )}/list/${selectedMonth}/${selectedYear}`,
           {
