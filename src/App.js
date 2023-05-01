@@ -20,13 +20,13 @@ export default function App() {
       <Router>
         <Routes>
           <Route element={<PrivateRoutes />}>
-          </Route>
             <Route exact path="/dashboard" element={<Dashboard/>} />
             <Route exact path="/" element={<Dashboard/>} />
             <Route exact path="/depo" element={<Depo/>} />
             <Route exact path="/topup" element={<TopUp/>} />
             <Route exact path="/pengeluaran" element={<Pengeluaran/>} />
             <Route exact path="/catatan" element={<Catatan/>} />
+          </Route>
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/login" element={<Login/>} />
         </Routes>
