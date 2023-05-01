@@ -7,6 +7,12 @@ import {UilUsdSquare} from "@iconscout/react-unicons"
 
 const CardBulanan = ({saldo, pembelian, pembayaran, date}) => {
 
+  const numberWithCommas = (x) => {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(".");
+  }
+
   return (
     <div className="CompactCard">
       <div className="radialBar">
@@ -18,7 +24,7 @@ const CardBulanan = ({saldo, pembelian, pembayaran, date}) => {
           <span>{date}</span>
           <UilUsdSquare></UilUsdSquare>
         </div>
-        <span>RP{saldo}</span>
+        <span>Rp{numberWithCommas(saldo)}</span>
         <div className="detail-pengeluaran">
             <span>Total Pembelian:</span>
             <span>{pembelian} barang.</span>

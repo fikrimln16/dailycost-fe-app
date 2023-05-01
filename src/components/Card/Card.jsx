@@ -7,6 +7,13 @@ import {UilUsdSquare} from "@iconscout/react-unicons"
 
 const Card = ({saldo, pembelian, pembayaran}) => {
 
+
+  const numberWithCommas = (x) => {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(".");
+  }
+
   const tanggal = new Date();
   let year = tanggal.getFullYear();
   let month = String(tanggal.getMonth() + 1).padStart(2, '0');
@@ -44,10 +51,10 @@ const Card = ({saldo, pembelian, pembayaran}) => {
           <span>{formattedDate}</span>
           <UilUsdSquare></UilUsdSquare>
         </div>
-        <span style={makeStyle(saldo)} >RP{saldo}</span>
+        <span style={makeStyle(saldo)} >Rp{numberWithCommas(saldo)}</span>
         <div className="detail-pengeluaran">
             <span>Pengeluaran hari ini:</span>
-            <span>Rp{pembelian}</span>
+            <span>Rp{numberWithCommas(pembelian)}</span>
         </div>
       </div>
     </div>

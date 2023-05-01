@@ -56,6 +56,12 @@ const MainPengeluaran = ({ pengeluaran }) => {
     setSelectedYear(e.target.value);
   };
 
+  const numberWithCommas = (x) => {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return parts.join(".");
+  }
+
   useEffect(() => {
     const getPengeluaran = async () => {
       try {
@@ -115,7 +121,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
       <Table data_pengeluaran={pengeluaranSort}></Table>
       <div className="title" id="title-kedua">
         <h1>Laporan Pengeluaran {sort}</h1>
-        <span>Total: Rp. {data_pembelian.total_pembelian}</span>
+        <span>Total: Rp.{numberWithCommas(data_pembelian.total_pembelian)}</span>
       </div>
       <CardsBulanan
         data_saldo={data_pembelian}
@@ -155,7 +161,7 @@ const MainPengeluaran = ({ pengeluaran }) => {
         <h1>
           Laporan Pengeluaran Bulanan
         </h1>
-        <span>Total : Rp.{data_pembelianBulanan.total_pembelian}</span>
+        <span>Total : Rp.{numberWithCommas(data_pembelianBulanan.total_pembelian)}</span>
       </div>
       <CardsBulanan
         data_saldo={data_pembelianBulanan}
