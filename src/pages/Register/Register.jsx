@@ -51,7 +51,7 @@ const Login = () => {
         setError("Password harus mengandung setidaknya 1 huruf kecil, 1 huruf besar, 1 angka, dan memiliki panjang minimal 8 karakter");
       } else {
         axios
-          .post("https://daily-cost.my.id/register", registerForm)
+          .post("http://dailycost.my.id/register", registerForm)
           .then((response) => {
             console.log(response.data.message);
             localStorage.setItem("token", response.data.token);

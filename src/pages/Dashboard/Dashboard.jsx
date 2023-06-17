@@ -19,7 +19,7 @@ function Dashboard() {
   let formattedDate = year + "-" + month + "-" + day;
 
   const requestPengeluaran = axios.get(
-    `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem(
+    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
       "user_id"
     )}/list/${formattedDate}`,
     {
@@ -29,7 +29,7 @@ function Dashboard() {
     }
   );
   const requestPembelian = axios.get(
-    `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem("user_id")}`,
+    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -37,7 +37,7 @@ function Dashboard() {
     }
   );
   const requestCatatan = axios.get(
-    `https://daily-cost.my.id/user/catatan/${localStorage.getItem("user_id")}`,
+    `http://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -45,7 +45,7 @@ function Dashboard() {
     }
   );
   const requestPembelianBulanan = axios.get(
-    `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem(
+    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
       "user_id"
     )}/list/${month}/${year}`,
     {
@@ -76,7 +76,7 @@ function Dashboard() {
 
     const getSaldo = async () => {
       await axios.get(
-        `https://daily-cost.my.id/user/saldo/${localStorage.getItem("user_id")}`,
+        `http://dailycost.my.id/api/saldo/${localStorage.getItem("user_id")}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

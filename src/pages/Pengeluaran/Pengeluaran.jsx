@@ -11,7 +11,7 @@ function Pengeluaran() {
   const [dataChart, setDataChart] = useState([]);
 
   const requestPembelian = axios.get(
-    `https://daily-cost.my.id/user/pengeluaran/${localStorage.getItem("user_id")}`,
+    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -20,7 +20,7 @@ function Pengeluaran() {
   );
 
   const requestChartData = axios.get(
-    `https://daily-cost.my.id/user/pengeluaran/chart/${localStorage.getItem("user_id")}`,
+    `http://dailycost.my.id/api/pengeluaran/chart/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

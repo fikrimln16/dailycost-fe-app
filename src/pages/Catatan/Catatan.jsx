@@ -9,10 +9,10 @@ import CardCatatan from "../../components/Card/CardCatatan";
 import MainCatatan from "../../components/MainCatatan/MainCatatan";
 
 function Catatan() {
-  const [dataCatatan, setDataCatatan] = useState([]);
+  const [dataCatatan, setDataCatatan] = useState([]); 
 
   const requestCatatan = axios.get(
-    `https://daily-cost.my.id/user/catatan/${localStorage.getItem("user_id")}`,
+    `http://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
