@@ -37,7 +37,7 @@ const Login = () => {
         } else {
         console.log(login);
         axios
-            .post("http://dailycost.my.id/login", login)
+            .post("https://dailycost.my.id/login", login)
             .then((response) => {
             // console.log(response.data.user_id)s
             localStorage.setItem("user_id", JSON.parse(response.data.data.id));
