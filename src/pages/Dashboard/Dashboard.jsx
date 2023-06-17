@@ -76,7 +76,7 @@ function Dashboard() {
 
     const getSaldo = async () => {
       await axios.get(
-        `http://dailycost.my.id/api/saldo/${localStorage.getItem("user_id")}`,
+        `https://dailycost.my.id/api/saldo/${localStorage.getItem("user_id")}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
