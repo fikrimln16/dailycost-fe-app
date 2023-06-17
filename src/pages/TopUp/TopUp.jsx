@@ -42,7 +42,7 @@ const Login = () => {
     } else {
       console.log(user_depo);
       axios
-        .post("http://dailycost.my.id/api/topup", user_depo, {
+        .post("https://dailycost.my.id/api/topup", user_depo, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

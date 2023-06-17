@@ -19,7 +19,7 @@ function Dashboard() {
   let formattedDate = year + "-" + month + "-" + day;
 
   const requestPengeluaran = axios.get(
-    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
+    `https://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
       "user_id"
     )}/list/${formattedDate}`,
     {
@@ -29,7 +29,7 @@ function Dashboard() {
     }
   );
   const requestPembelian = axios.get(
-    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem("user_id")}`,
+    `https://dailycost.my.id/api/pengeluaran/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -37,7 +37,7 @@ function Dashboard() {
     }
   );
   const requestCatatan = axios.get(
-    `http://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
+    `https://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -45,7 +45,7 @@ function Dashboard() {
     }
   );
   const requestPembelianBulanan = axios.get(
-    `http://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
+    `https://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
       "user_id"
     )}/list/${month}/${year}`,
     {

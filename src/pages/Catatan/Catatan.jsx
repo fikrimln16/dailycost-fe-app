@@ -12,7 +12,7 @@ function Catatan() {
   const [dataCatatan, setDataCatatan] = useState([]); 
 
   const requestCatatan = axios.get(
-    `http://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
+    `https://dailycost.my.id/api/catatan/${localStorage.getItem("user_id")}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
