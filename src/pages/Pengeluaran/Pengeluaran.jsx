@@ -37,8 +37,8 @@ function Pengeluaran() {
         requestChartData
       ])
         .then((responses) => {
-          setDataPengeluaran(responses[0].data.results);
-          setDataChart(responses[1].data.results);
+          setDataPengeluaran(responses[0].data.data.results);
+          setDataChart(responses[1].data.data);
         })
         .catch((error) => {
           console.log(error);

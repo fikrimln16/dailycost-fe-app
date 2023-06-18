@@ -29,7 +29,9 @@ function Dashboard() {
     }
   );
   const requestPembelian = axios.get(
-    `https://dailycost.my.id/api/pengeluaran/${localStorage.getItem("user_id")}`,
+    `https://dailycost.my.id/api/pengeluaran/${localStorage.getItem(
+      "user_id"
+    )}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -64,10 +66,10 @@ function Dashboard() {
         requestPembelianBulanan,
       ])
         .then((responses) => {
-          setDataPembelian(responses[0].data.pengeluaran);
-          setDataPengeluaran(responses[1].data.results);
+          setDataPembelian(responses[0].data.data.pengeluaran);
+          setDataPengeluaran(responses[1].data.data.results);
           setDataCatatan(responses[2].data.data);
-          setDataPembelianBulanan(responses[3].data.pengeluaran);
+          setDataPembelianBulanan(responses[3].data.data.pengeluaran);
         })
         .catch((error) => {
           console.log(error);
@@ -75,18 +77,26 @@ function Dashboard() {
     };
 
     const getSaldo = async () => {
-      await axios.get(
-        `https://dailycost.my.id/api/saldo/${localStorage.getItem("user_id")}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      ).then((responses) => {
-        setDataSaldo(responses.data.results[0]);
-      });
-    }
-
+      await axios
+        .get(
+          `https://dailycost.my.id/api/saldo/${localStorage.getItem(
+            "user_id"
+          )}`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then((responses) => {
+          let datasaldo = {
+            uang_gopay: responses.data.data.uang_gopay,
+            uang_cash: responses.data.data.uang_cash,
+            uang_rekening: responses.data.data.uang_rekening,
+          };
+          setDataSaldo(datasaldo);
+        });
+    };
 
     getData();
     getSaldo();
@@ -101,7 +111,7 @@ function Dashboard() {
           pembelian={dataPembelian}
           pengeluaran={dataPengeluaran}
           pembelian_bulanan={dataPembelianBulanan}
-          ></MainDash>
+        ></MainDash>
         <RightSide catatan={dataCatatan}></RightSide>
       </div>
     </div>

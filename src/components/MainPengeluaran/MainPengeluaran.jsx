@@ -75,8 +75,8 @@ const MainPengeluaran = ({ pengeluaran }) => {
             },
           }
         );
-        setPengeluaran(res.data.results);
-        setPembelian(res.data.pengeluaran);
+        setPengeluaran(res.data.data.results);
+        setPembelian(res.data.data.pengeluaran);
       } catch (error) {
         console.log(error.message);
       }
@@ -94,8 +94,8 @@ const MainPengeluaran = ({ pengeluaran }) => {
             },
           }
         );
-        setPengeluaranBulanan(res.data.results);
-        setPembelianBulanan(res.data.pengeluaran);
+        setPengeluaranBulanan(res.data.data.results);
+        setPembelianBulanan(res.data.data.pengeluaran);
       } catch (error) {
         console.log(error.message);
       }
