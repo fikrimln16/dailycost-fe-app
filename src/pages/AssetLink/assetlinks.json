@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.dcns.dailycost",
+    "sha256_cert_fingerprints":
+    ["38:F6:6B:81:10:68:28:24:67:BD:E1:D8:07:C3:20:40:55:FD:0F:65:10:F7:2F:90:5B:DF:30:1C:E8:2F:B1:9A"]
+  }
+}]

@@ -12,6 +12,7 @@ import Depo from "./pages/Depo/Depo";
 import TopUp from "./pages/TopUp/TopUp";
 import Pengeluaran from "./pages/Pengeluaran/Pengeluaran";
 import Catatan from "./pages/Catatan/Catatan";
+import AssetLink from "./pages/AssetLink/AssetLink";
 import "./App.css"
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           </Route>
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/.well-known/assetlinks.json" element={<AssetLink/>} />
         </Routes>
       </Router>
     </div>
